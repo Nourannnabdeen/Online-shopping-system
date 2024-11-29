@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Management | Educational Platform</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <h1>Course Management</h1>
+
+    <section>
+        <h2>Create a New Course</h2>
+        <form action="/create-course" method="POST">
+            <label for="course-title">Course Title:</label>
+            <input type="text" id="course-title" name="course_title" placeholder="Enter course title" required>
+            <br><br>
+
+            <label for="course-description">Description:</label>
+            <textarea id="course-description" name="course_description" placeholder="Enter course description" rows="4" required></textarea>
+            <br><br>
+
+            <label for="course-category">Category:</label>
+            <select id="course-category" name="course_category" required>
+                <option value="technology">Technology</option>
+                <option value="business">Business</option>
+                <option value="arts">Arts</option>
+                <option value="science">Science</option>
+                <option value="others">Others</option>
+            </select>
+            <br><br>
+
+            <button type="submit">Create Course</button>
+        </form>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>Update an Existing Course</h2>
+        <form action="/update-course" method="POST">
+            <label for="select-course">Select Course:</label>
+            <select id="select-course" name="course_id" required>
+                <option value="course1">Course 1</option>
+                <option value="course2">Course 2</option>
+                <option value="course3">Course 3</option>
+            </select>
+            <br><br>
+
+            <label for="new-course-title">New Title:</label>
+            <input type="text" id="new-course-title" name="new_course_title" placeholder="Enter new course title">
+            <br><br>
+
+            <label for="new-course-description">New Description:</label>
+            <textarea id="new-course-description" name="new_course_description" placeholder="Enter new course description" rows="4"></textarea>
+            <br><br>
+
+            <button type="submit">Update Course</button>
+        </form>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>Organize Courses</h2>
+        <form action="/organize-courses" method="POST">
+            <label for="sort-by">Sort Courses By:</label>
+            <select id="sort-by" name="sort_by">
+                <option value="title">Title</option>
+                <option value="date">Date Created</option>
+                <option value="category">Category</option>
+            </select>
+            <br><br>
+
+            <button type="submit">Organize</button>
+        </form>
+    </section>
+    <script src="script.js"></script>
+
+</body>
+</html>
