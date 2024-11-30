@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dressify</title>
+    <!-- Load static files using Django's {% static %} tag -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1>Dressify</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="product-management.html">Products</a></li>
+                    <li><a href="shopping-cart.html">Cart</a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="welcome-section">
+            <h2>Welcome to Dressify</h2>
+            <p>Your one-stop destination for the latest clothing trends. Log in or register to start shopping!</p>
+            <div class="action-buttons">
+                <a href="login.html" class="btn">Log In</a>
+                <a href="register.html" class="btn">Register</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Dressify. All Rights Reserved.</p>
+    </footer>
+    <!-- Load JavaScript using Django's {% static %} tag -->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

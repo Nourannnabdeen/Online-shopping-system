@@ -1,0 +1,27 @@
+<section id="product-catalog">
+    <h2>Our Product Catalog</h2>
+    <div class="product-grid" id="productGrid"></div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        fetch('http://127.0.0.1:8080/api/products/')
+            .then(response => response.json())
+            .then(data => {
+                const productGrid = document.getElementById('productGrid');
+                productGrid.innerHTML = '';
+                data.forEach(product => {
+                    const productItem = document.createElement('div');
+                    productItem.className = 'product-item';
+                    productItem.innerHTML = `
+                        <img src="${product.image || 'placeholder.jpg'}" alt="${product.name}">
+                        <h3>${product.name}</h3>
+                        <p class="price">$${product.price}</p>
+                        <button class="add-to-cart-btn" data-id="${product.id}">Add to Cart</button>
+                    `;
+                    productGrid.appendChild(productItem);
+                });
+            })
+            .catch(error => console.error('Error fetching products:', error));
+    });
+</script>
