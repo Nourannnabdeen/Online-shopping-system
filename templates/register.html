@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Dressify</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <header>
@@ -14,10 +15,11 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="product-management.html">Products</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Register</a></li>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'product-list' %}">Products</a></li>
+                    <li><a href="{% url 'cart' %}">Cart</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'register' %}">Register</a></li>
                 </ul>
             </nav>
         </div>
@@ -25,8 +27,9 @@
 
     <main>
         <section id="register">
-            <h2>Register</h2>
-            <form id="registrationForm">
+            <h2>Create an Account</h2>
+            <form id="registerForm" method="post">
+                {% csrf_token %}
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" placeholder="Enter your username" required>
 
@@ -36,16 +39,10 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
 
-                <label for="confirmPassword">Confirm Password</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
 
                 <button type="submit">Register</button>
-
-                <div class="social-login">
-                    <p>Or register with:</p>
-                    <button type="button" class="social-btn">Google</button>
-                    <button type="button" class="social-btn">Facebook</button>
-                </div>
             </form>
         </section>
     </main>
@@ -53,8 +50,6 @@
     <footer>
         <p>&copy; 2024 Dressify. All Rights Reserved.</p>
     </footer>
-    <script src="js/script.js"></script>
-
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
-
 </html>

@@ -1,5 +1,4 @@
 /* General Styles */
-/* Body Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -43,20 +42,19 @@ header .navbar ul li a:hover {
     background-color: #555;
 }
 
-/* Welcome Section Styles */
+/* Welcome Section */
 .welcome-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: calc(100vh - 120px); /* Full height minus header and footer */
+    height: calc(100vh - 120px);
     padding: 20px;
-    box-sizing: border-box;
     background-color: #fff;
     margin: 0 auto;
     width: 100%;
-    max-width: 1200px; /* Limit max width for better layout */
+    max-width: 1200px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -64,15 +62,13 @@ header .navbar ul li a:hover {
 .welcome-section h2 {
     font-size: 2.5em;
     margin-bottom: 10px;
-    color: #333;
 }
 
 .welcome-section p {
     font-size: 1.2em;
     margin-bottom: 20px;
-    color: #555;
-    line-height: 1.5;
     max-width: 800px;
+    line-height: 1.5;
 }
 
 .action-buttons {
@@ -83,7 +79,6 @@ header .navbar ul li a:hover {
 }
 
 .action-buttons .btn {
-    display: inline-block;
     padding: 15px 30px;
     background-color: #333;
     color: white;
@@ -108,8 +103,8 @@ footer {
     width: 100%;
 }
 
-/* Login Page Styles */
-#login {
+/* Form Styles (Login/Register/Checkout) */
+form {
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
@@ -118,21 +113,19 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#login h2 {
+form h2 {
     text-align: center;
     margin-bottom: 20px;
     font-size: 1.8em;
-    color: #333;
 }
 
-#login form label {
+form label {
     display: block;
     margin-bottom: 5px;
     font-size: 0.9em;
-    color: #555;
 }
 
-#login form input {
+form input {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -140,119 +133,20 @@ footer {
     border-radius: 5px;
 }
 
-#login form button {
+form button {
     width: 100%;
     padding: 10px;
     background-color: #333;
     color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
-}
-
-#login form button:hover {
-    background-color: #555;
-}
-
-.social-login {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.social-login p {
-    margin-bottom: 10px;
-    font-size: 0.9em;
-    color: #555;
-}
-
-.social-btn {
-    padding: 10px 20px;
-    margin: 5px;
-    background-color: #4267B2; /* Facebook Blue */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.social-btn:hover {
-    background-color: #365899;
-}
-/* Register Page Styles */
-#register {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#register h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.8em;
-    color: #333;
-}
-
-#register form label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 0.9em;
-    color: #555;
-}
-
-#register form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-#register form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
     font-size: 1em;
-}
-
-#register form button:hover {
-    background-color: #555;
-}
-
-.social-login {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.social-login p {
-    margin-bottom: 10px;
-    font-size: 0.9em;
-    color: #555;
-}
-
-.social-btn {
-    padding: 10px 20px;
-    margin: 5px;
-    background-color: #DB4437; /* Google Red */
-    color: white;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
-    font-size: 0.9em;
+    transition: background-color 0.3s ease;
 }
 
-.social-btn.facebook {
-    background-color: #4267B2; /* Facebook Blue */
-}
-
-.social-btn:hover {
-    opacity: 0.9;
+form button:hover {
+    background-color: #555;
 }
 
 /* Product Grid */
@@ -282,12 +176,10 @@ footer {
 .product-item h3 {
     font-size: 1.2em;
     margin-bottom: 10px;
-    color: #333;
 }
 
 .product-item .price {
     font-size: 1.1em;
-    color: #555;
     margin-bottom: 15px;
 }
 
@@ -303,12 +195,13 @@ footer {
 .product-item button:hover {
     background-color: #555;
 }
+
 /* Cart Styles */
-.cart-items {
+.cart-items, .cart-summary {
     margin: 20px;
-    padding: 10px;
+    padding: 20px;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -316,33 +209,21 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
     border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.cart-item img {
+    max-width: 80px;
 }
 
 .cart-item:last-child {
     border-bottom: none;
 }
 
-.cart-item img {
-    max-width: 80px;
-    margin-right: 20px;
-}
-
 .item-details {
     display: flex;
     align-items: center;
-}
-
-.item-name {
-    font-size: 1.1em;
-    color: #333;
-}
-
-.item-price {
-    font-size: 1em;
-    color: #555;
-    margin-left: 10px;
 }
 
 .item-actions {
@@ -357,8 +238,8 @@ footer {
 }
 
 .item-actions button {
-    padding: 8px 12px;
     background-color: #e74c3c;
+    padding: 8px 12px;
     color: white;
     border: none;
     border-radius: 5px;
@@ -369,90 +250,18 @@ footer {
     background-color: #c0392b;
 }
 
-/* Cart Summary */
-.cart-summary {
-    margin: 20px;
-    padding: 15px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.cart-summary h3 {
-    font-size: 1.5em;
+.cart-summary h3, .cart-summary p {
     margin-bottom: 15px;
-}
-
-.cart-summary p {
-    font-size: 1.1em;
-    margin-bottom: 10px;
 }
 
 .cart-summary .btn {
     padding: 10px 20px;
     background-color: #333;
     color: white;
-    text-decoration: none;
     border-radius: 5px;
-    cursor: pointer;
+    text-align: center;
 }
 
 .cart-summary .btn:hover {
-    background-color: #555;
-}
-/* Checkout Form Styles */
-#checkout {
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#checkout h2, #checkout h3 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.section {
-    margin-bottom: 20px;
-}
-
-.section label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 0.9em;
-    color: #555;
-}
-
-.section input[type="text"],
-.section input[type="number"],
-.section input[type="checkbox"],
-.section input[type="radio"] {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.section input[type="checkbox"],
-.section input[type="radio"] {
-    width: auto;
-}
-
-#checkout button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#checkout button:hover {
     background-color: #555;
 }
